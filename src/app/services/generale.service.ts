@@ -11,7 +11,7 @@ export class GeneraleService {
   }
 
   addSimulation(data:any):Observable<any>{
-    return this.httpClient.post<any>('http://127.0.0.1:5000/addSimulation',data)
+    return this.httpClient.post<any>('http://127.0.0.1:5000/api/tasks',data)
   }
   getData():Observable<any>{
     return this.httpClient.get<any>('http://127.0.0.1:5000/api/books/all');

@@ -7,21 +7,18 @@ import { GeneraleService } from 'src/app/services/generale.service'
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  historiqueInput: number = 0
-  marierInput: number = 0
-  revenuInput: number = 0
+  historiqueInput: any = 0
+  marierInput: any = 0
+  revenuInput: any = 0
   data: any
   constructor(private generaleService: GeneraleService) {}
 
   ngOnInit(): void {}
 
   sendData() {
-    let data = {
-      historique: this.historiqueInput,
-      marier: this.marierInput,
-      revenu: this.revenuInput,
-    }
-    console.log(this.historiqueInput)
+    let data = [parseInt(this.historiqueInput), parseInt(this.marierInput), parseInt(this.revenuInput)]
+    console.log(data);
+    
     this.generaleService
       .addSimulation(data)
       .subscribe((res) => console.log(res))
