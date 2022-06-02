@@ -10,7 +10,7 @@ export class HomeComponent implements OnInit {
   historiqueInput: string = ''
   marierInput: string = ''
   revenuInput: string = ''
-  data = this.generaleService.getData()
+  data: any
   constructor(private generaleService: GeneraleService) {}
 
   ngOnInit(): void {}
@@ -22,8 +22,16 @@ export class HomeComponent implements OnInit {
       revenu: this.revenuInput,
     }
     console.log(this.historiqueInput)
-    this.generaleService.addSimulation(data).subscribe(
-      res => console.log(res)
-    );
+    this.generaleService
+      .addSimulation(data)
+      .subscribe((res) => console.log(res))
+  }
+
+  getData() {
+    this.generaleService.getData().subscribe((res) => {
+      this.data = res;
+      console.log(this.data);
+      
+    })
   }
 }

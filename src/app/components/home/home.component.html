@@ -11,11 +11,12 @@
         <button class="btn btn-primary m-auto mt-4 text-nowrap" (click)="sendData()">Predict</button>
       </div>
     </div>
+    <div>  {{historiqueInput +'/'+ marierInput +'/'+ revenuInput}} </div>
   </div>
   <div>
+    <button class="btn btn-secondary m-auto mt-4 text-nowrap" (click)="getData()">get data from api</button>
     <pre>
-      {{data | async | json}}
-      {{historiqueInput +'/'+ marierInput +'/'+ revenuInput}}
+      {{data | json}}
     </pre>
   </div>
 </div>
