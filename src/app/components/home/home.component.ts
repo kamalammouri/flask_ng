@@ -7,9 +7,9 @@ import { GeneraleService } from 'src/app/services/generale.service'
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  historiqueInput: string = ''
-  marierInput: string = ''
-  revenuInput: string = ''
+  historiqueInput: number = 0
+  marierInput: number = 0
+  revenuInput: number = 0
   data: any
   constructor(private generaleService: GeneraleService) {}
 
@@ -29,9 +29,8 @@ export class HomeComponent implements OnInit {
 
   getData() {
     this.generaleService.getData().subscribe((res) => {
-      this.data = res;
-      console.log(this.data);
-      
+      this.data = res
+      console.log(this.data)
     })
   }
 }
