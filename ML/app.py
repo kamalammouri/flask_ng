@@ -1,9 +1,11 @@
 import numpy as np
 from flask import Flask, request, jsonify, render_template
+from flask_cors import CORS
 import pickle
 
 
 app = Flask(__name__)
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 model = pickle.load(open('model.pkl', 'rb'))
 
 @app.route('/')
