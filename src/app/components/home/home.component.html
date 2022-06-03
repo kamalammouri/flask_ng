@@ -24,18 +24,13 @@
         </div>
         <div class="row">
           <label class="text-center" for="Revenu">Revenu</label>
-          <select class="form-select my-1" aria-label="Default select example"
-            name="Revenu" id="Revenu" [(ngModel)]="revenuInput">
-            <option value=0 selected>Non</option>
-            <option value=1>Oui</option>
-          </select>
+          <input type="text" name="Revenu" id="Revenu" [(ngModel)]="revenuInput">
         </div>
         <button class="btn btn-primary m-auto mt-4 text-nowrap" (click)="sendData()">
           Predict
         </button>
       </div>
     </div>
-    <div> {{historiqueInput +'/'+ marierInput +'/'+ revenuInput}} </div>
   </div>
   <div>
     <button class="btn btn-secondary m-auto mt-4 text-nowrap"

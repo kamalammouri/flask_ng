@@ -9,7 +9,7 @@ import { GeneraleService } from 'src/app/services/generale.service'
 export class HomeComponent implements OnInit {
   historiqueInput: any = 0
   marierInput: any = 0
-  revenuInput: any = 0
+  revenuInput: any ;
   data: any
   constructor(private generaleService: GeneraleService) {}
 
