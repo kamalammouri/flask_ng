@@ -7,6 +7,7 @@ import { GeneraleService } from 'src/app/services/generale.service'
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+  result:string='';
   historiqueInput: any = 0
   marierInput: any = 0
   revenuInput: any ;
@@ -21,7 +22,7 @@ export class HomeComponent implements OnInit {
     
     this.generaleService
       .addSimulation(data)
-      .subscribe((res) => console.log(res))
+      .subscribe((res) => this.result='res')
   }
 
   getData() {

@@ -6,6 +6,9 @@
       </div>
       <div class="card-body d-flex flex-column justify-content-center">
         <div class="col-12 mt-2">
+          <div class="row" *ngIf="result">
+            <div class="h3" [ngClass]="result=='1' ? 'bg-success' : 'bg-danger'">{{result}}</div>
+          </div>
           <div class="row">
             <label class="text-center" for="Historique">Historique</label>
             <select class="form-select my-1" aria-label="Default select example"
